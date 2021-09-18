@@ -1,6 +1,5 @@
-
 <p align="center">
-  <a href="http://doc.cms.talelin.com/">
+  <a href="http://doc.cms.7yue.pro/">
     <img width="200" src="https://consumerminiaclprd01.blob.core.chinacloudapi.cn/miniappbackground/sfgmember/lin/left-logo.png">
   </a>
 </p>
@@ -9,7 +8,7 @@
   <a href="#简介">简介</a>&nbsp;|&nbsp;<a href="#快速上手">快速上手</a>&nbsp;|&nbsp;<a href="#版本日志">版本日志</a>
 </p>
 
-![](https://img.shields.io/badge/版本-0.3.7-3963bc.svg)
+![](https://img.shields.io/badge/版本-0.3.5-3963bc.svg)
 ![](https://img.shields.io/badge/node-8.11.0+-3963bc.svg)
 ![](https://img.shields.io/badge/脚手架-vuecli3-3963bc.svg)
 ![](https://img.shields.io/badge/license-MIT-3963bc.svg)
@@ -17,188 +16,147 @@
 ![](https://img.shields.io/badge/developer-@GongJS-3963bc.svg)
 ![](https://img.shields.io/badge/developer-@quanquan-3963bc.svg)
 
-## 简介
 
-Lin-CMS 是林间有风团队经过大量项目实践所提炼出的一套**内容管理系统框架**。
+## 一、Lin CMS 简介
 
-Lin-CMS 可以有效的帮助开发者提高 CMS 的开发效率。
+- Lin-CMS 是林间有风团队经过大量项目实践所提炼出的一套**内容管理系统框架**。
 
-Lin-CMS 是一套前后端完整的解决方案，后端部署请移步：
+- Lin-CMS 可以有效的帮助开发者提高 CMS 的开发效率。
 
-[lin-cms-koa](https://github.com/TaleLin/lin-cms-koa)
+- Lin-CMS 是一套前后端完整的解决方案，后端部署请移步：
 
-[lin-cms-flask](https://github.com/TaleLin/lin-cms-flask)
+    - [lin-cms-koa](https://github.com/TaleLin/lin-cms-koa)
 
-[lin-cms-spring-boot](https://github.com/TaleLin/lin-cms-spring-boot)
+    - [lin-cms-flask](https://github.com/TaleLin/lin-cms-flask)
 
-### 注意
+    - [lin-cms-spring-boot](https://github.com/TaleLin/lin-cms-spring-boot)
 
-**Lin-CMS 是工程类开源项目，不能保证无缝升级**
+### **特性**
 
-### 林间有风团队官方网站
+- Netlify CMS 是一个单页应用程序，您可以将其拉入/admin站点的一部分。
 
-[https://talelin.com/](https://talelin.com/)
+- 它提供了一个干净的 UI，用于编辑存储在 Git 存储库中的内容。
 
-### 文档地址
+- 您设置了一个 YAML 配置来描述您站点的内容模型，并且通常会稍微调整 CMS 的主要布局以适合您自己的站点。
 
-[http://doc.cms.talelin.com/](http://doc.cms.talelin.com/)
+- 当用户导航到/admin/他们时，系统会提示他们登录，一旦通过身份验证，他们将能够创建新内容或编辑现有内容。
 
-### 线上 Demo
+源项目地址：https://github.com/TaleLin/lin-cms-vue
 
-[http://face.cms.talelin.com/](http://face.cms.talelin.com/)
+### **最佳实践**
 
-### 案例
+1.1 Lin-CMS的本地发布
 
-[http://sleeve.talelin.com/](http://sleeve.talelin.com/)
-
-
-### Lin CMS 的特点
-
-Lin CMS 的构筑思想是有其自身特点的。下面我们阐述一些 Lin 的主要特点。
-
-#### Lin CMS 是一个前后端分离的 CMS 解决方案
-
-这意味着，Lin 既提供后台的支撑，也有一套对应的前端系统，当然双端分离的好处不仅仅在于此，我们会在后续提供`NodeJS`和`PHP`版本的 Lin。如果你心仪 Lin，却又因为技术栈的原因无法即可使用，没关系，我们会在后续提供更多的语言版本。为什么 Lin 要选择前后端分离的单页面架构呢？
-
-首先，传统的网站开发更多的是采用服务端渲染的方式，需用使用一种模板语言在服务端完成页面渲染：比如 JinJa2、Jade 等。
-服务端渲染的好处在于可以比较好的支持 SEO，但作为内部使用的 CMS 管理系统，SEO 并不重要。
-
-但一个不可忽视的事实是，服务器渲染的页面到底是由前端开发者来完成，还是由服务器开发者来完成？其实都不太合适。现在已经没有多少前端开发者是了解这些服务端模板语言的，而服务器开发者本身是不太擅长开发页面的。那还是分开吧，前端用最熟悉的 Vue 写 JS 和 CSS，而服务器只关注自己的 API 即可。
-
-其次，单页面应用程序的体验本身就要好于传统网站。
-
-#### 框架本身已内置了 CMS 常用的功能
-
-Lin 已经内置了 CMS 中最为常见的需求：用户管理、权限管理、日志系统等。开发者只需要集中精力开发自己的 CMS 业务即可
-
-#### Lin CMS 本身也是一套开发规范
-
-Lin CMS 除了内置常见的功能外，还提供了一套开发规范与工具类。换句话说，开发者无需再纠结如何验证参数？如何操作数据库？如何做全局的异常处理？API 的结构如何？前端结构应该如何组织？这些问题 Lin CMS 已经给出了解决方案。当然，如果你不喜欢 Lin 给出的架构，那么自己去实现自己的 CMS 架构也是可以的。但通常情况下，你确实无需再做出架构上的改动，Lin 可以满足绝大多数中小型的 CMS 需求。
-
-举例来说，每个 API 都需要校验客户端传递的参数。但校验的方法有很多种，不同的开发者会有不同的构筑方案。但 Lin 提供了一套验证机制，开发者无需再纠结如何校验参数，只需模仿 Lin 的校验方案去写自己的业务即可。
-
-还是基于这样的一个原则：**Lin CMS 只需要开发者关注自己的业务开发，它已经内置了很多机制帮助开发者快速开发自己的业务**。
-
-## 快速上手
-
-```sh
-# clone the project
-git clone https://github.com/TaleLin/lin-cms-vue.git
-
-# install dependency
-npm install or yarn
-
-# develop
-npm run serve or yarn (run) serve
+``` bash
+npm install
+npm run serve
 ```
 
-## 讨论交流
-微信公众号搜索：林间有风
-<br>
-<img class="QR-img" src="http://i1.sleeve.talelin.com/wechat-account.jpeg" width="150" height="150">
+1.2 Lin-CMS的线上网站发布
 
-QQ群搜索：Lin CMS 官方交流群 或 814597236
+见下一章。
 
-<img src="https://consumerminiaclprd01.blob.core.chinacloudapi.cn/miniappbackground/sfgmember/lin/lin-cms.png" width="150" height="205" >
+## 二、将Lin-CMS项目通过云开发平台，快速发布为网站
 
-## 版本日志
+### **背景介绍**
+云开发平台是阿里云面向广大开发者提供的免费云上研发工作平台，可以实现开发的全流程。关于云开发平台的介绍：https://help.aliyun.com/product/161245.html。
 
-最新版本 `0.3.7`
+### **最佳实践**
 
-### 0.3.7
+**1.创建Lin-CMS代码项目**
 
-1. `A` 新增导出 Excel 示例
-2. `U` 使用淘宝源来安装 node-sass
-3. `U` 优化依赖包版本
+直接fork本项目到自己的GitHub账号下。
 
-### 0.3.6
+**2.打开云开发平台，完成阿里云账号注册登陆，同意云开发平台服务协议** https://workbench.aliyun.com/application
 
-1. `F` 修复一级菜单双击报错
-2. `U` 统一不同编辑器换行符
-3. `U` 内容提交使用“加载中”按钮
-4. `F` 修复Table组件不能居中问题
-5. `F` 编辑用户时，至少选择一个分组
+<img src="https://ecoboost-readme-image.oss-cn-shanghai.aliyuncs.com/feApp/github/hexo/sign.png" width="400">
 
-### 0.3.5
+**3.创建云开发平台-前端部署应用**
 
-1. `F` 统一前端规范，文件夹、文件名统一用单数和小写字母中划线形式
-2. `A` 新增右键关闭历史记录
-3. `F` 调整默认 dialog 样式
+3.1 创建前端应用
 
-### 0.3.4
+依次点击「应用列表」「前端应用」「新建前端应用」按钮。首先绑定GitHub帐号，允许云开发平台构建、发布你的GitHub代码为可访问的网站。
 
-1. `U` 优化变量命名，升级 `element-ui` 版本，
-2. `F` `Home` 组件改为异步加载
+<img src="https://ecoboost-readme-image.oss-cn-shanghai.aliyuncs.com/feApp/github/hexo/create_0.png" width="200">
 
-### 0.3.3
+<img src="https://ecoboost-readme-image.oss-cn-shanghai.aliyuncs.com/feApp/github/hexo/oauth.png" width="200">
 
-1. `A` 新增消息中心组件
+选择第一步中的代码仓库、主干分支等，并点击下一步。主干分支一般指的是代码的master或main等分支。
 
-### 0.3.2
+<img src="https://readme-img-2.oss-us-west-1.aliyuncs.com/feApp/github/lin-cms/lin1.png" width="300">
 
-1. `A` 新增图表插件
+填写基本信息并点击「完成」。稍等片刻创建成功后，将进入到应用部署界面。
 
-### 0.3.1
+<img src="https://readme-img-2.oss-us-west-1.aliyuncs.com/feApp/github/lin-cms/lin2.png" width="600">
 
-1. `F` 增加历史栏高度
+3.2 开发部署配置
 
-### 0.3.0
+填写日常/线上环境的部署配置
+按照"?"提示，依次填写部署配置信息。其中：
+- 本项目资源路径应填写为"./website/dist",因为本项目静态资源默认存储在根目录下的website文件夹中的dist文件夹中
 
-1. `A` 新增一个用户可以属于多个分组
-2. `F` 权限相关 auth right 统一替换为 permission
+- 如需使用自定义域名访问，可将自定义域名填入对应位置，并在部署成功后，根据步骤3.4进行域名解析后实现自定义域名访问</br>
+  <img src="https://readme-img-2.oss-us-west-1.aliyuncs.com/feApp/github/lin-cms/lin3.png" width="400">
 
-### 0.2.2
+3.3 进行项目的部署和查看
 
-1. `F` 修复 tinymce 富文本动态绑定问题
-2. `U` 保持代码风格一致优化
+依次点击「部署」「确定」，即可启动日常/线上环境的发布流程。对于每个代码分支，要求先发布日常环境，再发布线上。若不需多套环境，则可以只使用日常环境，或者发布一次日常环境后，仅使用线上环境即可。
 
-### 0.2.1
+<img src="https://ecoboost-readme-image.oss-cn-shanghai.aliyuncs.com/feApp/github/hexo/deploy.png" width="300">
 
-1. `A` 新增一键清除 reuse tab
-2. `A` 新增侧边导航搜索，可在 config 配置是否启用
-3. `F` 修复 post put 等请求不能自动重发问题
-4. `U` 优化异常处理，框架默认弹出前端配置异常信息，可通过 handleError 和 showBackend 控制本次请求是否开发者自行处理和是否直接展示后端返回异常信息
-5. `C` 登录用户名字段由 nickname -> username，同时新增 nickname 为昵称字段，可以更新昵称(需后端同步修改)
-6. `U` 优化了一些移动端适配
-7. `C` 列表信息字段由 collection -> items, total_nums -> total, 增加 count、page、total_page字段（需后端同步修改）
+3.3.1 部署完成，查看部署结果
 
-### 0.2.0
+访问**测试域名**或者**自定义域名**，以下以测试域名为例
 
-1. `A` 新增图像上传、图像预览、富文本等自定义组件
-2. `A` 新增 lin-cms-ui 多个基础组件
+<img src="https://readme-img-2.oss-us-west-1.aliyuncs.com/feApp/github/lin-cms/lin4.png" width="650">
 
-### 0.1.0-beta.3
+<img src="https://readme-img-2.oss-us-west-1.aliyuncs.com/feApp/github/lin-cms/lin5.png" width="650">
 
-1. `U` 首页更新为 card 设计
-2. `A` 新增头像上传
-3. `A` 新增单元测试
-2. `A` 新增switch、rate、tabs、link、tag组件
+3.3.2 在部署完成后，部署状态会显示为“已部署”。且部署网站的记录和过程，也会被完整记录下来：
 
-### 0.1.0-beta.2
+<img src="https://readme-img-2.oss-us-west-1.aliyuncs.com/feApp/github/docs/create4.png" width="600">
 
-1. `F` 修复无感知刷新令牌异常
-2. `A` 新增入场动画
-3. `A` 新增全屏功能
-2. `A` 新增Icon、Form组件
+3.3.3可点击部署记录的「查看结果」来查看部署到OSS存储中的静态资源。
 
-### 0.1.0-beta.1
+<img src="https://readme-img-2.oss-us-west-1.aliyuncs.com/feApp/github/lin-cms/lin6.png" width="400">
 
-1. `U` 新UI界面
-2. `A` button组件、table组件
-3. `F` 修复令牌刷新异常
+<img src="https://ecoboost-readme-image.oss-cn-shanghai.aliyuncs.com/feApp/github/hexo/result_download.png" width="350">
 
-### 0.0.1-alpha.3
+3.3.4 可点击部署记录的「查看日志」查看部署的详细过程，并在部署发生错误时，精确定位学习错误情况。
 
-1.  `A` 添加插件机制
-2.  `U` 重构路由设计
-2.  `A` 可配置三级路由导航
+<img src="https://readme-img-2.oss-us-west-1.aliyuncs.com/feApp/github/netify_cms/netify7.png" width="400">
 
-### 0.0.1-alpha.2
+部署操作可以在每次更新内容并push后再次进行，实现静态网站内容的按需实时更新。
 
-1.  `U` 升级到 `vue-cli3.4` 
-2.  `A` 慕课网专题插件
+3.4 将OSS存储中的项目发布为网站链接
 
-### 0.0.1-alpha.1
+3.4.1 解析自己的域名到OSS Bucket的访问域名上
 
-1.  `A` 初始化内测版
+打开自己域名的DNS解析控制台，使用阿里云域名或其它提供商的域名均可，此处以阿里云为例：
+
+首先，找到自己要解析的域名，添加/修改一条解析记录：
+
+<img src="https://ecoboost-readme-image.oss-cn-shanghai.aliyuncs.com/feApp/github/hexo/cname.png" width="650">
+
+如下图所示，配置CNAME、自己的域名、记录值：
+
+<img src="https://ecoboost-readme-image.oss-cn-shanghai.aliyuncs.com/feApp/github/hexo/cname_2.png" width="400">
+
+记录值查看方法示意图：
+
+<img src="https://ecoboost-readme-image.oss-cn-shanghai.aliyuncs.com/feApp/github/hexo/oss_domain.png" width="600">
+
+完成配置后，稍等片刻，确定使用https://zijian.aliyun.com/ ，或者ping/dig/nslookup等指令可以查找到本域名的解析情况。
+
+3.4.2 当URL仅访问目录而非目录下的HTML文件时，由OSS托管路由自动定向至目录下的指定HTML文件
+
+某些前端项目生成的静态代码，其HTML中嵌入的链接地址是不含index.html的。这要求放置HTML文件的存储，或NGINX服务器等，有将裸访问路径自动对应到具体HTML文件的能力。
+
+OSS Bucket具有该托管能力，需要在使用的OSS Bucket内，选择「基础设置」「静态页面」，并如下图所示，填写默认首页为index.html，开通子目录首页功能，并点击「保存」。
+
+<img src="https://ecoboost-readme-image.oss-cn-shanghai.aliyuncs.com/feApp/github/hexo/oss_index.png" width="350">
+
+3.5 （可选）使用CDN加速域名访问，节约流量费用
+
+可点击「部署配置」中的「如何配置CDN加速」，将自己的域名与CDN加速绑定，从而加速网站访问。
 
